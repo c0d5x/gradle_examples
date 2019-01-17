@@ -1,16 +1,22 @@
 package com.example;
 
-import org.apache.log4j.Logger;
+// import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.slf4j.bridge.SLF4JBridgeHandler;
+
 
 public class App
 {
 
-    final static Logger logger = Logger.getLogger(App.class);
+    private final Logger logger = LoggerFactory.getLogger(getClass());;
 
     public static void main( String[] args )
     {
         App obj = new App();
         obj.runMe("log4j test");
+        SLF4JBridgeHandler.install();
+        obj.runMe("log4j test after install");
     }
 
     public void runMe(String parameter){
@@ -24,21 +30,17 @@ public class App
 
         logger.warn("This is warn : " + parameter);
         logger.error("This is error : " + parameter);
-        logger.fatal("This is fatal : " + parameter);
 
-        int mag = 10;
+        int mag = 2;
 
-        for (int a=0; a<mag; a++){
-          logger.fatal("This is fatal : " + parameter);
-          for (int b=0; b<mag; b++){
-            logger.error("This is error : " + parameter);
-            for (int c=0; c<mag; c++){
-              logger.warn("This is warn : " + parameter);
-              for (int d=0; d<mag; d++){
-                logger.info("This is info : " + parameter);
-                for (int e=0; e<mag; e++){
-                  logger.debug("This is debug : " + parameter);
-                }
+        for (int b=0; b<mag; b++){
+          logger.error("This is error : " + parameter);
+          for (int c=0; c<mag; c++){
+            logger.warn("This is warn : " + parameter);
+            for (int d=0; d<mag; d++){
+              logger.info("This is info : " + parameter);
+              for (int e=0; e<mag; e++){
+                logger.debug("This is debug : " + parameter);
               }
             }
           }
