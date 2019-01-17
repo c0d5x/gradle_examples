@@ -4,6 +4,8 @@ apply plugin: 'application'
 
 mainClassName = 'com.example.App'
 
+applicationDefaultJvmArgs = ["-Dlog4j.configurationFile=log4j2.properties", "-Dlog4j2.debug"]
+
 repositories {
     mavenCentral()
 }
