@@ -2,6 +2,8 @@
 /build/
 build
 tags
+*.log
+*.gz
 
 # Ignore Gradle GUI config
 gradle-app.setting
