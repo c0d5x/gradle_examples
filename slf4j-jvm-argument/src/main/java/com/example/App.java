@@ -2,7 +2,6 @@ package com.example;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.slf4j.bridge.SLF4JBridgeHandler;
 
 
 public class App
@@ -12,7 +11,6 @@ public class App
 
     public static void main( String[] args )
     {
-        SLF4JBridgeHandler.install();
         App obj = new App();
         obj.runMe("slf4j test");
     }
