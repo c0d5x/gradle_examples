@@ -4,14 +4,14 @@ apply plugin: 'application'
 
 mainClassName = 'com.example.App'
 
-applicationDefaultJvmArgs = ["-Dlog4j.configurationFile=log4j.properties"]
+applicationDefaultJvmArgs = ["-Dlogback.configurationFile=logback-config.xml"]
 
 repositories {
     mavenCentral()
 }
 
 jar {
-    baseName = 'log4jtest'
+    baseName = 'slf4jtest'
     version =  '0.0.1'
 }
 
@@ -20,9 +20,6 @@ targetCompatibility = 1.8
 
 dependencies {
     testCompile "junit:junit:4.12"
-    compile "org.apache.logging.log4j:log4j-api:2.8.2"
-    compile "org.apache.logging.log4j:log4j-core:2.8.2"
-    compile "org.apache.logging.log4j:log4j-1.2-api:2.8.2"
     compile "org.slf4j:log4j-over-slf4j:1.7.25"
     compile "org.slf4j:jul-to-slf4j:1.7.25"
     compile "ch.qos.logback:logback-classic:1.1.11"

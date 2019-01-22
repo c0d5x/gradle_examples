@@ -1,6 +1,5 @@
 package com.example;
 
-// import org.apache.log4j.Logger;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.slf4j.bridge.SLF4JBridgeHandler;
@@ -13,10 +12,9 @@ public class App
 
     public static void main( String[] args )
     {
-        App obj = new App();
-        obj.runMe("log4j test");
         SLF4JBridgeHandler.install();
-        obj.runMe("log4j test after install");
+        App obj = new App();
+        obj.runMe("slf4j test");
     }
 
     public void runMe(String parameter){
@@ -31,7 +29,7 @@ public class App
         logger.warn("This is warn : " + parameter);
         logger.error("This is error : " + parameter);
 
-        int mag = 2;
+        int mag = 10;
 
         for (int b=0; b<mag; b++){
           logger.error("This is error : " + parameter);
